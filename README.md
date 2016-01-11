@@ -4,7 +4,6 @@ Add class to element once it enters the viewport.
 
 ## Options
 
-|-------------------|---------|---------|-------------|
 | Option            | Type    | Default | Description |
 |-------------------|---------|---------|-------------|
 | **elTrigger**     | string  | `top`   | `top` or `bottom`. The point of the element that dertermines if it is in the viewport. |
