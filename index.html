@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Oh Hai</title>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:300' rel='stylesheet' type='text/css'>
+  <style>
+    * { box-sizing: border-box;}
+    body { font-family: 'Open Sans', sans-serif; font-size: 18px; margin: 0; padding: 0;}
+    img { width: auto; height: auto; max-width: 100%; display: block; }
+    h1, h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+    h2 { font-size: 20px; text-transform: uppercase; }
+    a { color: #FFF; }
+    pre {margin: 20px 20px 40px; padding: 20px 30px; background-color: #eee; border: 1px solid #E0E0E0; font-size: 16px;}
+    pre .comment {color: #BDBDBD;}
+    .on-visible { transition: all 0.5s ease-out; }
+    .intro-content { transition: all 0.75s ease-out; opacity: 0; background-color: transparent; color: #fff;}
+    .intro-content.visible { opacity: 1; background-image: url(https://images.unsplash.com/photo-1426844820858-410ed943328d?crop=entropy&fit=crop&fm=jpg&h=1250&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=2200); background-size: cover;}
+    .on-visible.fade-in { opacity: 0; }
+    .on-visible.fade-in.visible { opacity: 1; }
+    .content { padding: 50px;}
+    .text-move-in {overflow: hidden; }
+    .text-move-in .content { color: #FFF; transition: transform 0.5s ease 0.5s;}
+    .text-move-in.left .content { transform: translate3d(-120%, 0, 0); }
+    .text-move-in.right .content { transform: translate3d(120%, 0, 0); }
+    .text-move-in.left.visible .content, .text-move-in.right.visible .content { transform: translate3d(0,0,0); }
+    .text-move-down {overflow: hidden;}
+    .text-move-down .content { transform: translate3d(0, -100%, 0); transition: transform 0.5s ease; }
+    .text-move-down.visible .content { transform: translate3d(0, 0, 0); }
+    .intro-content { padding: 20vw; text-align: center; }
+    .row { width: 100%; overflow: hidden; }
+    .row-table {display: table;}
+    .half-width { width: 50%; float: left; }
+    .row-table .half-width { display: table-cell; float: none; vertical-align: middle; }
+    .color-block { background-color: transparent; }
+    .color-block.red.visible {background-color: #FFCDD2;}
+    .color-block.yellow.visible {background-color: #FFF59D;}
+  </style>
+</head>
+<body>
+
+  <div class="on-visible full-width intro-content">
+    <h1>Oh, Hai.</h1>
+    <p>ohhai.js is a jQuery plugin that adds a class to an element when it becomes visible in the viewport.<p>
+    <p><a href="https://github.com/j2made/ohhai">View on Github</a></p>
+  </div>
+
+  <div class="on-visible full-width text-move-down">
+    <div class="content">
+      <p>Install with bower:<p>
+      <pre><code>bower install ohhai</code></pre>
+      <p>Reference jQuery and ohhai.js:</p>
+      <pre><code>&#60;script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"&#62;&#60;/script&#62;
+&#60;script src="ohhai.js"&#62;&#60;/script&#62;</code></pre>
+      <p>Initialize:</p>
+        <pre><code>$('.on-visible').ohhai({
+  <span class="comment">// Default Options</span>
+  elTrigger: 'top',       <span class="comment">// `top` or `bottom`, trigger point for element</span>
+  triggerOffset: 0,       <span class="comment">// distance the trigger should be delayed.</span>
+  offsetValue: 'px',      <span class="comment">// `px` or `percentage`, the value type for `triggerOffset`</span>
+  inViewClass: 'visible'  <span class="comment">// class name that should be added</span>
+});</code></pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="on-visible fade-in half-width">
+      <img src="https://images.unsplash.com/photo-1445285303476-2f3b16d67b7a?crop=entropy&fit=crop&fm=jpg&h=1250&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=2200" alt="Photo By Alberto Restifo" />
+    </div>
+
+    <div class="on-visible fade-in half-width">
+      <img src="https://images.unsplash.com/photo-1445187118261-1593a5af9bdf?crop=entropy&fit=crop&fm=jpg&h=1250&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=2200" alt="Photo By Alberto Restifo" />
+    </div>
+  </div>
+
+  <div class="row row-table">
+    <div class="on-visible text-move-in left half-width color-block red">
+      <div class="content">
+        <h2>Run animations with css</h2>
+        <p>So many animations can be done with simple transitions.</p>
+      </div>
+    </div>
+
+    <div class="on-visible fade-in half-width">
+      <img src="https://images.unsplash.com/photo-1419082839393-34579386d293?crop=entropy&fit=crop&fm=jpg&h=1250&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=2200" alt="Photo By Alberto Restifo">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="on-visible fade-in full-width">
+      <img src="https://images.unsplash.com/photo-1419064642531-e575728395f2?crop=entropy&fit=crop&fm=jpg&h=1250&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=2200" alt="Photo By Alberto Restifo" />
+    </div>
+  </div>
+
+  <div class="row row-table">
+    <div class="on-visible fade-in half-width">
+      <img src="https://images.unsplash.com/photo-1418985991508-e47386d96a71?crop=entropy&fit=crop&fm=jpg&h=1250&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=2200" alt="Photo By Alberto Restifo">
+    </div>
+
+    <div class="on-visible text-move-in right half-width color-block yellow">
+      <div class="content">
+        <h2>Run animations with css</h2>
+        <p>So many animations can be done with simple transitions.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="on-visible fade-in full-width">
+      <img src="https://images.unsplash.com/photo-1418985227304-f32df7d84e39?crop=entropy&fit=crop&fm=jpg&h=1250&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=2200" alt="Photo By Alberto Restifo" />
+    </div>
+  </div>
+
+
+</body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="ohhai.js"></script>
+  <script>
+    $('.on-visible').ohhai({
+      triggerOffset: 50,
+      offsetValue: 'percentage'
+    });
+  </script>
+</html>

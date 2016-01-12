@@ -4,9 +4,15 @@ Add class to element once it enters the viewport.
 
 ## Usage
 
-Include jQuery and ohhai.js:
+Install with Bower
 
 ```
+bower install ohhai
+```
+
+Include jQuery and ohhai.js:
+
+```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="/js/ohhai.js"></script>
 ```
@@ -18,7 +24,7 @@ $('.fade-on-scroll').ohhai();
 
 // Or change the options
 $('.fade-on-scroll').ohhai({
-    triggerOffset: 200
+    triggerOffset: 200,
     inViewClass: 'visible'
 });
 ```
