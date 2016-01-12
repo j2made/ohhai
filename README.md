@@ -28,8 +28,8 @@ $('.fade-on-scroll').ohhai({
 ## Options
 
 
-| Option            | Type | Default   | Description |
-|-------------------|------|-----------|-------------|
-| **elTrigger**     | str  | `top`     | `top` or `bottom`. The point of the element that determines if it is in the viewport. |
-| **triggerOffset** | int | 0          | Pixel amount that will be scrolled before trigger occurs |
-| **inViewClass**   | str | `'oh-hai'` | The class that is added to visible elements. |
+| Option            | Type | Default    | Description |
+|-------------------|------|------------|-------------|
+| **elTrigger**     | str  | `top`      | `top` or `bottom`. The point of the element that determines if it is in the viewport. |
+| **triggerOffset** | int | 0           | Pixel amount that will be scrolled before trigger occurs |
+| **inViewClass**   | str | `'visible'` | The class that is added to visible elements. |

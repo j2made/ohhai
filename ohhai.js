@@ -20,7 +20,7 @@
       elTrigger: 'top',       // `top` or `bottom`
       triggerOffset: 0,       // distance the trigger should be delayed.
       offsetValue: 'px',      // value type for offest, `px` or `percentage`
-      inViewClass: 'oh-hai'   // class name that should be added
+      inViewClass: 'visible'  // class name that should be added
     };
     var opts      = $.extend( {}, defaults, options );
     var selector  = this.selector;
@@ -34,16 +34,18 @@
     function fade_in() {
       $(selector).each( function(){
         $this = $(this);
+        thisOffest = opts.triggerOffset;
+
 
         // Convert offset to percentage if necessary
         if(opts.offsetValue === 'percentage') {
-          opts.triggerOffset = Math.abs( ( opts.triggerOffset / 100) * $this.outerHeight() );
+          thisOffest = ( ( opts.triggerOffset / 100) * $this.outerHeight() );
         }
 
         if(opts.elTrigger === 'bottom') {
-          elTop = $this.offset().top + opts.triggerOffset + $this.outerHeight();
+          elTop = $this.offset().top + thisOffest + $this.outerHeight();
         } else {
-          elTop = $this.offset().top + opts.triggerOffset;
+          elTop = $this.offset().top + thisOffest;
         }
 
         if( winBottom > elTop ){
