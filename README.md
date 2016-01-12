@@ -13,7 +13,7 @@ Include jQuery and ohhai.js:
 
 Initialize in your .js file:
 
-```
+```javascript
 $('.fade-on-scroll').ohhai();
 
 // Or change the options
