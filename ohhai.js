@@ -1,7 +1,7 @@
 /**
  * OHHAI
  * -----
- * Add a class to element once it enters the viewport.
+ * Add a class to an element once it enters the viewport.
  * Useful for Fading in elements on scroll with CSS and whatnot.
  *
  * @author:   Shaun M Baer / J2made
@@ -14,11 +14,12 @@
  */
 
 (function( $ ) {
-  $.fn.inView = function(options) {
+  $.fn.ohhai = function(options) {
     // Set default Options
     var defaults = {
-      elTrigger: 'top',       // 'top', 'bottom'
-      triggerOffset: 0,       // int, pixels the trigger should be delayed.
+      elTrigger: 'top',       // `top` or `bottom`
+      triggerOffset: 0,       // distance the trigger should be delayed.
+      offsetValue: 'px',      // value type for offest, `px` or `percentage`
       inViewClass: 'oh-hai'   // class name that should be added
     };
     var opts      = $.extend( {}, defaults, options );
@@ -33,6 +34,11 @@
     function fade_in() {
       $(selector).each( function(){
         $this = $(this);
+
+        // Convert offset to percentage if necessary
+        if(opts.offsetValue === 'percentage') {
+          opts.triggerOffset = Math.abs( ( opts.triggerOffset / 100) * $this.outerHeight() );
+        }
 
         if(opts.elTrigger === 'bottom') {
           elTop = $this.offset().top + opts.triggerOffset + $this.outerHeight();

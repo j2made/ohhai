@@ -1,0 +1,32 @@
+{
+  "name": "oh-hai",
+  "version": "1.0.0",
+  "description": "Add class to images when they enter the viewport",
+  "authors": [
+    {
+      "name": "Shaun Baer",
+      "email": "shaun.baer@gmail.com",
+      "homepage": "https://github.com/iamhexcoder"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/j2made/oh-hai.git"
+  },
+  "bugs": {
+    "url": "https://github.com/j2made/oh-hai/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.10.0",
+    "npm": ">=2.1.5"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "jshint": "2.9.1-rc2",
+    "gulp-jshint": "^1.11.2",
+    "gulp-uglify": "^1.4.1",
+    "jshint-stylish-source": "1.0.5",
+    "gulp-rename": "1.2.2"
+  }
+}

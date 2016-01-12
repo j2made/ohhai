@@ -1,0 +1,20 @@
+{
+    "name": "ohhai",
+    "main": "ohhai.js",
+    "version": "1.0.0",
+    "homepage": "https://github.com/j2made/ohhai",
+    "authors": [
+        "Shaun M. Baer"
+    ],
+    "description": "Add a class to an element once it enters the viewport.",
+    "keywords": [
+        "scroll",
+        "class",
+        "jquery",
+        "fade in"
+    ],
+    "license": "MIT",
+    "dependencies": {
+        "jquery": ">=1.7"
+    }
+}
