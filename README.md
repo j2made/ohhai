@@ -27,6 +27,7 @@ $('.fade-on-scroll').ohhai({
 
 ## Options
 
+
 | Option            | Type | Default   | Description |
 |-------------------|------|-----------|-------------|
 | **elTrigger**     | str  | `top`     | `top` or `bottom`. The point of the element that determines if it is in the viewport. |
