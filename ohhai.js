@@ -13,7 +13,7 @@
  *
  */
 
-(function( $ ) {
+(function( $, window, document, undefined ) {
   $.fn.ohhai = function(options) {
     // Set default Options
     var defaults = {
@@ -72,4 +72,4 @@
     });
 
   };
-}( jQuery ));
+}( jQuery, window, document ));

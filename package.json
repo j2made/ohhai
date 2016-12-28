@@ -1,13 +1,20 @@
 {
   "name": "oh-hai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Add class to images when they enter the viewport",
+  "main": "./ohhai.js",
   "authors": [
     {
       "name": "Shaun Baer",
       "email": "shaun.baer@gmail.com",
       "homepage": "https://github.com/iamhexcoder"
     }
+  ],
+  "keywords": [
+    "viewport",
+    "scrolling",
+    "on scroll",
+    "jquery"
   ],
   "repository": {
     "type": "git",
