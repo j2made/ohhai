@@ -23,9 +23,12 @@
       inViewClass: 'visible'  // class name that should be added
     };
     var opts      = $.extend( {}, defaults, options );
-    var selector  = this.selector;
     var winBottom = $(window).scrollTop() + $(window).height();
+    var selector  = this.selector;
     var elTop;
+
+    console.log(selector);
+
 
     /**
      * Determine position of element.
@@ -34,18 +37,21 @@
     function fade_in() {
       $(selector).each( function(){
         $this = $(this);
-        thisOffest = opts.triggerOffset;
+        triggerOffset = opts.triggerOffset;
+        thisOffset = $this.offset();
+
+        console.log($this);
 
 
         // Convert offset to percentage if necessary
         if(opts.offsetValue === 'percentage') {
-          thisOffest = ( ( opts.triggerOffset / 100) * $this.outerHeight() );
+          triggerOffset = ( ( opts.triggerOffset / 100) * $this.outerHeight() );
         }
 
         if(opts.elTrigger === 'bottom') {
-          elTop = $this.offset().top + thisOffest + $this.outerHeight();
+          elTop = thisOffset.top + triggerOffset + $this.outerHeight();
         } else {
-          elTop = $this.offset().top + thisOffest;
+          elTop = thisOffset.top + triggerOffset;
         }
 
         if( winBottom > elTop ){
@@ -58,17 +64,16 @@
     /**
      * When the DOM is ready, make it so.
      */
-    $(document).ready(function() {
+    $(document).on( 'ready', function() {
       fade_in();
+    });
 
-      /**
-       * Whenever the window is scrolled, make it so.
-       */
-      $(window).scroll( function(){
-        winBottom = $(window).scrollTop() + $(window).height();
-        fade_in();
-      });
-
+    /**
+     * Whenever the window is scrolled, make it so.
+     */
+    $(window).on('scroll', function(){
+      winBottom = $(window).scrollTop() + $(window).height();
+      fade_in();
     });
 
   };
