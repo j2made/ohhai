@@ -27,7 +27,7 @@
     var selector  = this.selector;
     var elTop;
 
-    console.log(selector);
+    // console.log(selector);
 
 
     /**
@@ -36,12 +36,12 @@
      */
     function fade_in() {
       $(selector).each( function(){
-        $this = $(this);
-        triggerOffset = opts.triggerOffset;
-        thisOffset = $this.offset();
 
-        console.log($this);
+        var $this = $(this);
+        var triggerOffset = opts.triggerOffset;
+        var thisOffset = $this.offset();
 
+        // console.log($this);
 
         // Convert offset to percentage if necessary
         if(opts.offsetValue === 'percentage') {

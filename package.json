@@ -1,5 +1,5 @@
 {
-  "name": "oh-hai",
+  "name": "ohhai",
   "version": "1.1.0",
   "description": "Add class to images when they enter the viewport",
   "main": "./ohhai.js",
