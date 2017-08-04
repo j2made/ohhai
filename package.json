@@ -1,6 +1,6 @@
 {
   "name": "ohhai",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Add class to images when they enter the viewport",
   "main": "./ohhai.js",
   "authors": [
